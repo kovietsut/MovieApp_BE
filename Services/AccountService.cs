@@ -110,6 +110,7 @@ namespace VoteMovie.Services
                 return JsonUtil.Success(new
                 {
                     token = encodedJwt,
+                    username = user.Username,
                 });
             }
             catch (Exception ex)
