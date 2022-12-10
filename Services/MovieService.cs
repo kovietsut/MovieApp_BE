@@ -35,7 +35,7 @@ namespace VoteMovie.Services
                     x.Id,
                     x.Title,
                     x.ImageContent,
-                    likes = _unitOfWork.RepositoryCRUD<Favorite>().Set().Count(y => y.Id == x.Id && y.TypeOfFavorite == "Like")
+                    likes = _unitOfWork.RepositoryCRUD<Favorite>().Set().Count(y => y.MovieId == x.Id && y.TypeOfFavorite == "Like")
                 });
             var listData = data.Skip(((int)pageNumber - 1) * (int)pageSize)
                 .Take((int)pageSize).OrderByDescending(x => x.Id).ToList();
